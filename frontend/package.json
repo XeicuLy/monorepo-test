@@ -23,8 +23,7 @@
     "ci:test": "vitest --coverage",
     "ci:lint": "eslint .",
     "ci:format": "prettier --check .",
-    "predev": "pnpm convert",
-    "prepare": "husky"
+    "predev": "pnpm convert"
   },
   "dependencies": {
     "@pinia/nuxt": "0.7.0",
@@ -71,22 +70,6 @@
     "vite-node": "2.1.5",
     "vitest": "2.1.5",
     "vue-tsc": "2.1.10"
-  },
-  "lint-staged": {
-    "**/*.{js,mjs,cjs,ts,cts,mts,vue}": [
-      "pnpm convert",
-      "eslint --fix"
-    ],
-    "**/*.{js,mjs,cjs,ts,cts,mts,vue,json}": "prettier --write",
-    "**/*.{ts,cts,mts,vue}": "nuxi typecheck ."
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-customizable"
-    },
-    "cz-customizable": {
-      "config": ".cz-config.cts"
-    }
   },
   "volta": {
     "node": "22.11.0",

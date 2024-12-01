@@ -1,0 +1,1 @@
+exec < /dev/tty && ./frontend/node_modules/.bin/cz --hook || true
