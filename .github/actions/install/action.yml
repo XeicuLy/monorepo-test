@@ -10,6 +10,10 @@ inputs:
     description: 'The version of Node.js to use'
     required: false
     default: 'lts/*'
+  working-directory:
+    description: 'Directory containing package.json'
+    required: false
+    default: '.'
 
 runs:
   using: 'composite'
@@ -24,7 +28,9 @@ runs:
       with:
         node-version: ${{ inputs.node-version }}
         cache: pnpm
+        cache-dependency-path: ${{ inputs.working-directory }}/pnpm-lock.yaml
 
     - name: Install dependencies
       shell: bash
-      run: pnpm install
+      working-directory: ${{ inputs.working-directory }}
+      run: pnpm install --frozen-lockfile
