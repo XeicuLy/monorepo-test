@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./frontend
+        working-directory: frontend
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
@@ -40,7 +40,7 @@ jobs:
     needs: type-check
     defaults:
       run:
-        working-directory: ./frontend
+        working-directory: frontend
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
@@ -61,7 +61,7 @@ jobs:
     needs: type-check
     defaults:
       run:
-        working-directory: ./frontend
+        working-directory: frontend
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
@@ -80,7 +80,7 @@ jobs:
     needs: type-check
     defaults:
       run:
-        working-directory: ./frontend
+        working-directory: frontend
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
@@ -99,7 +99,7 @@ jobs:
     needs: [type-check, test, eslint, prettier]
     defaults:
       run:
-        working-directory: ./frontend
+        working-directory: frontend
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
